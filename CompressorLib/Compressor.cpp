@@ -43,6 +43,7 @@ void BMPCompressor::compress(const std::filesystem::path &filePath)
 		std::copy(encodedData.cbegin(), encodedData.cend(), std::ostreambuf_iterator<char>(outFile));
 	}
 
+	delete [] bitmap->data;
 	delete bitmap;
 	outFile.close();
 
